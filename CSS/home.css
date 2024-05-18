@@ -12,6 +12,7 @@ body {
 }
 
 header {
+    min-width: 1600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,4 +34,35 @@ header img {
 
 .menu-icon {
     font-size: 40px;
+}
+
+.text-order {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.content-slider {
+    display: flex;
+    flex-direction: center;
+    transform: translate(28%);
+    margin-top: 40px;
+    max-width: 1400px;
+}
+
+#slider {
+    display: table;
+    position: relative;
+}
+
+#slider img {
+    opacity: 0;
+    /* max-width: 1300px; */
+    max-height: 770px;
+    position: absolute;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+#slider img.selected {
+    opacity: 1;
 }
