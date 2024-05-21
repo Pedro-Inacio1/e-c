@@ -1,24 +1,19 @@
-*{
+* {
     padding: 0;
     margin: 0;
     list-style-type: none;
     text-decoration: none;
     color: #fff;
-}
+} 
 
-body {
-    background: #513219;
-    font-family: Roboto, sans-serif;
-}
-
-header {
-    min-width: 1600px;
+ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 15px;
     padding-right: 15px;
     box-shadow: 7px 1px black;
+    width: 98,5%;
 }
 
 header img {
@@ -30,39 +25,93 @@ header img {
     display: flex;
     justify-content: space-between;
     gap: 40px;
-}
+} 
 
-.menu-icon {
+ .menu-icon {
     font-size: 40px;
+    cursor: pointer;
 }
 
-.text-order {
-    margin-top: 20px;
-    text-align: center;
+body {
+    background: linear-gradient(72deg, #513219 35%, #432C20, #4E4343 99% );
+    font-family: Roboto, sans-serif;
+    height: 100%;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
 }
 
-.content-slider {
-    display: flex;
-    flex-direction: center;
-    transform: translate(28%);
-    margin-top: 40px;
-    max-width: 1400px;
-}
-
-#slider {
-    display: table;
-    position: relative;
-}
-
-#slider img {
-    opacity: 0;
-    /* max-width: 1300px; */
-    max-height: 770px;
+.content {
+    height: 520px;
+    width: 935px;
+    border-radius: 20px;
+    overflow: hidden;
     position: absolute;
-    margin: 0 auto;
-    width: fit-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-#slider img.selected {
-    opacity: 1;
+.content .slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.navigation {
+    position: absolute;
+    bottom: 160px;
+    left: 850px;
+    display: flex;
+}
+
+.bar {
+    width: 15px;
+    height: 15px;
+    border: 2px solid #fff;
+    margin: 6px;
+    cursor: pointer;
+    transform: .5s ease;
+}
+
+.bar:hover {
+    background-color: #fff;
+    transition: 0.7s;
+}
+
+input {
+    display: none;
+}
+
+.slides {
+    display: flex;
+    width: 500%;
+    height: 100%;
+}
+
+.slide {
+    width: 20%;
+    transition: .8s;
+}
+
+#slide1:checked ~ .s1 {
+    margin-left: 0;
+}
+
+#slide2:checked ~ .s1 {
+    margin-left: -20%;
+}
+
+#slide3:checked ~ .s1 {
+    margin-left: -40%;
+}
+
+#slide4:checked ~ .s1 {
+    margin-left: -60%;
+}
+
+#slide5:checked ~ .s1 {
+    margin-left: -80%;
 }
