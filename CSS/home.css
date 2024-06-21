@@ -6,7 +6,7 @@
     color: #fff;
 } 
 
- header {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,25 +15,34 @@
     box-shadow: 7px 1px black;
     width: 98,5%;
 }
+    
+.header ul {
+    display: flex;
+}
+
+ul li a {
+    color: #fff;
+    padding: 20px;
+}
 
 header img {
     width: 80px;
     height: 80px;
 }
 
-.menu-bar {
+.menu-bar ul {
     display: flex;
-    justify-content: space-between;
     gap: 40px;
 } 
 
- .menu-icon {
+.menu-icon {
     font-size: 40px;
     cursor: pointer;
+    margin-right: 110px;
 }
 
 body {
-    background: linear-gradient(72deg, #513219 35%, #432C20, #4E4343 99% );
+    background: #513219;
     font-family: Roboto, sans-serif;
     height: 100%;
     box-sizing: border-box;
@@ -43,6 +52,22 @@ body {
     padding: 0;
 }
 
+.first-content {
+    display: flex;
+    gap: 30%;
+    margin-left: 38%;
+}
+
+.warning {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    text-align: center;
+    margin-right: 14%;
+}
+
+
+/* SLIDER  */
 .content {
     height: 520px;
     width: 935px;
@@ -114,4 +139,61 @@ input {
 
 #slide5:checked ~ .s1 {
     margin-left: -80%;
+}
+/* END SLIDER */
+
+.content-choose {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 120%;
+    display: block;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.choose-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.sweets {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    border: 3px solid white;
+    width: 200px;
+    height: 150px;
+}
+
+.sweets img {
+    width: 100%;
+    height: 100%;
+}
+
+/* FOOTER */
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+    background-color: #fff;
+    margin: 3px solid black;
+    color: black;
+}
+
+footer p {
+    color: black;
+}
+
+a {
+    color: black;
 }

@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-decoration: none;
+    color: #fff;
+} 
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: 7px 1px black;
+    width: 98,5%;
+}
+    
+.header ul {
+    display: flex;
+}
+
+ul li a {
+    color: #fff;
+    padding: 20px;
+}
+
+header img {
+    width: 80px;
+    height: 80px;
+}
+
+.menu-bar ul {
+    display: flex;
+    gap: 40px;
+} 
+
+.menu-icon {
+    font-size: 40px;
+    cursor: pointer;
+    margin-right: 110px;
+}
+
+body {
+    background: #513219;
+    font-family: Roboto, sans-serif;
+    color: black;
+}
