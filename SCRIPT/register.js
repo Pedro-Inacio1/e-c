@@ -1,17 +1,23 @@
-function save() {
-    let name = document.getElementById("complete-name").value;
-    let email = document.getElementById("email").value;
-    
-    console.log(errors);
-    
-    let errors = [];
-    if (name.indexOf(" ") === -1 ) {
-        errors.push("Preencha o nome completo! ");
+function salvar() {
+    let nome = document.getElementById("complete-name").value
+    let tellphone = document.getElementById("tellphone").value;
+    let cpf = document.getElementById("CPF").value;
+    let password = document.getElementById("password").value;
+    let password2 = document.getElementById("password2").value;
+
+    let erros = []
+    if(nome.indexOf(" ") === -1 ) {
+        erros.push("Preencha o nome completo! ")
     }
-    
-    return false;
+    if (tellphone.lenght === 11) {
+        return true
+    }
+    else {
+        erros.push("Número de telefone preenchido de forma incorreta!")
+    }
+    if (cpf.lenght != 11) {
+        erros.push("CPF inválido!!!")
+    }
+    console.log(erros)
+    return false
 }
-let tellphone = document.getElementById("tellphone").value;
-let cpf = document.getElementById("CPF").value;
-let password = document.getElementById("password").value;
-let password2 = document.getElementById("password2").value;
