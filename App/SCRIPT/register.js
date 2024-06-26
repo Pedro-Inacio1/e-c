@@ -1,6 +1,11 @@
+function send(nome, tellphone, email, cpf, password) {
+
+}
+
 function salvar() {
     let nome = document.getElementById("complete-name").value
     let tellphone = document.getElementById("tellphone").value;
+    let email = document.getElementById("email").value;
     let cpf = document.getElementById("CPF").value;
     let password = document.getElementById("password").value;
     let password2 = document.getElementById("password2").value;
@@ -9,15 +14,21 @@ function salvar() {
     if(nome.indexOf(" ") === -1 ) {
         erros.push("Preencha o nome completo! ")
     }
-    if (tellphone.lenght === 11) {
-        return true
+    
+    if(tellphone.length != 11)
+    {
+        erros.push("Telefone preenchido de forma incorreta!");
     }
-    else {
-        erros.push("Número de telefone preenchido de forma incorreta!")
+
+    if(password != password2)
+    {
+        erros.push("As senhas não coincidem.")
     }
-    if (cpf.lenght != 11) {
+
+    if (cpf.length != 11) {
         erros.push("CPF inválido!!!")
     }
+
     console.log(erros)
     return false
 }

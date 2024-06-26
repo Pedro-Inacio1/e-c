@@ -20,6 +20,10 @@ header {
     display: flex;
 }
 
+input {
+    color: black;
+}
+
 ul li a {
     color: #fff;
     padding: 20px;
