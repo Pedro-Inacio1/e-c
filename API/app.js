@@ -1,10 +1,21 @@
-const express = require("express");
-const app = express(); 
+import express from 'express'
 
-app.use((req, res, next) => {
-    res.status(200).send({
-        message : "ok, deu certo"
-    })
-})
+import ProductsController from './SRC/Controllers/ProductsController.js';
 
-module.exports = app;
+const app = express()
+
+app.use(express.json())
+
+app.get('/produtos', ProductsController.index())
+
+// app.get('/produtos', (_req, res) => {
+//   try {
+//     const produtos = ProductsController.index();
+//     res.json(produtos); 
+//   } catch (error) {
+//     res.status(500).send(error.message); 
+//   }
+// });
+
+
+export default app;

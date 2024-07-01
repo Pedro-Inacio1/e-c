@@ -1,5 +1,7 @@
-const http = require("http");
-const port = process.ENV || 3000;
-const app = require("./app")
-const server = http.createServer();
-server.listen(port); 
+import app from './app.js'
+
+const port = 3000
+
+app.listen(port, () => {
+    console.log(`Servidor rodando em: http://localhost:${port}/produtos`)
+})
