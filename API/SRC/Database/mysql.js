@@ -1,11 +1,13 @@
-import mysql from 'mysql'
+import mysql from 'mysql2' 
 
 const conexao = mysql.createConnection({
     user: 'root',
     password: 'yuuto4549',
-    database: 'produtos', 
+    database: 'produtos',
     host: 'localhost',
-    port: 8000
+    port: 3306
 })
 
-export default conexao;
+conexao.connect()
+
+export default conexao

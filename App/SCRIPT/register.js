@@ -1,34 +1,41 @@
-function send(nome, tellphone, email, cpf, password) {
+const url = "http://localhost:3000/register-user"
 
+var form = document.getElementById("myform")
+var button = document.getElementById("submit")
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    
+    var namee = document.getElementById("complete-name").value
+    var email = document.getElementById("email").value
+    var tellphone = document.getElementById("tellphone").value
+    var cpf = document.getElementById("CPF").value
+    var password = document.getElementById("password").value
+
+    postProducts(namee, email, tellphone, cpf, password);
+});
+
+function getProducts() {
+    axios.get(url)
+        .then(response => {
+            const data = response.data
+            teste.textContent = JSON.stringify(data)
+        })
+        .catch(error => console.log(error))
 }
 
-function salvar() {
-    let nome = document.getElementById("complete-name").value
-    let tellphone = document.getElementById("tellphone").value;
-    let email = document.getElementById("email").value;
-    let cpf = document.getElementById("CPF").value;
-    let password = document.getElementById("password").value;
-    let password2 = document.getElementById("password2").value;
-
-    let erros = []
-    if(nome.indexOf(" ") === -1 ) {
-        erros.push("Preencha o nome completo! ")
-    }
-    
-    if(tellphone.length != 11)
-    {
-        erros.push("Telefone preenchido de forma incorreta!");
-    }
-
-    if(password != password2)
-    {
-        erros.push("As senhas não coincidem.")
-    }
-
-    if (cpf.length != 11) {
-        erros.push("CPF inválido!!!")
-    }
-
-    console.log(erros)
-    return false
+function postProducts(namee, email, tellphone, cpf, password) {
+    axios.post(url, {
+        Nome_completo: namee,
+        CPF: cpf,
+        Email: email,
+        Telefone: tellphone,
+        Senha: password
+    })
+        .then(function (response) {
+            alert("Usuário cadastrado com sucesso!")
+        })
+        .catch(function (error) {
+            alert("Houve um erro ao cadastrar.   " + error)
+        })
 }

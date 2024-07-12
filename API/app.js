@@ -1,21 +1,16 @@
 import express from 'express'
 
 import ProductsController from './SRC/Controllers/ProductsController.js';
+import RegisterController from './SRC/Controllers/RegisterController.js';
 
 const app = express()
 
 app.use(express.json())
 
-app.get('/produtos', ProductsController.index())
+app.post('/register-products', ProductsController.Store)
 
-// app.get('/produtos', (_req, res) => {
-//   try {
-//     const produtos = ProductsController.index();
-//     res.json(produtos); 
-//   } catch (error) {
-//     res.status(500).send(error.message); 
-//   }
-// });
+app.post('/register-user', RegisterController.storage)
 
+app.get('/products', ProductsController.Show)
 
 export default app;
