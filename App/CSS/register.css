@@ -3,7 +3,6 @@
     margin: 0;
     list-style-type: none;
     text-decoration: none;
-    color: rgb(0, 0, 0);
 } 
 
 header {
@@ -20,8 +19,10 @@ header {
     display: flex;
 }
 
-input {
-    color: black;
+.menu-icon {
+    font-size: 40px;
+    cursor: pointer;
+    margin-right: 110px;
 }
 
 ul li a {
@@ -39,14 +40,56 @@ header img {
     gap: 40px;
 } 
 
-.menu-icon {
-    font-size: 40px;
-    cursor: pointer;
-    margin-right: 110px;
-}
-
 body {
     background: #513219;
     font-family: Roboto, sans-serif;
+    color: #fff;
+}
+
+.myform {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: end;
+    flex-direction: column;
+    gap: 40px;
+    margin: auto;
+}
+
+.submit-form {
+    width: 100px;
+    height: 40px;
+    margin-right: 25%;
+    border-radius: 10px;
+}
+
+.submit-form:hover {
+    background-color: #513219;
+    color: #fff;
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+input {
+    width: 340px;
+    height: 30px;
+    border-radius: 20px;
     color: black;
+}
+
+.submenu {
+    margin-top: 10px;
+    width: 150px;
+    margin-left: 90%;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px 5px white;
+    gap: 5px;
+}
+
+.submenu a {
+    color: #fff;
+    border-bottom: 1px solid white;
 }
