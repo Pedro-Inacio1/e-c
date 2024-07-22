@@ -1,41 +1,69 @@
-const url = "http://localhost:3000/register-user"
+const url = "http://localhost:3000/register-user";
 
-var form = document.getElementById("myform")
-var button = document.getElementById("submit")
+var form = document.getElementById("myform");
+var password = document.getElementById("password").value;
+var confirmPassword = document.getElementById("password2").value;
 
-form.addEventListener('submit', function (event) {
+if (password === confirmPassword) {
+
+  form.addEventListener('submit', async function (event) {
     event.preventDefault();
+
+    var namee = document.getElementById("complete-name").value;
+    var email = document.getElementById("email").value;
+    var tellphone = document.getElementById("tellphone").value;
+    var cpf = document.getElementById("CPF").value;
+    var password = document.getElementById("password").value;
     
-    var namee = document.getElementById("complete-name").value
-    var email = document.getElementById("email").value
-    var tellphone = document.getElementById("tellphone").value
-    var cpf = document.getElementById("CPF").value
-    var password = document.getElementById("password").value
+    const hashedPassword = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(password));
 
-    postProducts(namee, email, tellphone, cpf, password);
-});
+    if (namee === '' || email === '' || tellphone === '' || cpf === '' || password === '') {
+      alert("Preencha todos os campos corretamente!");
+      return;
+    }
 
-function getProducts() {
-    axios.get(url)
-        .then(response => {
-            const data = response.data
-            teste.textContent = JSON.stringify(data)
-        })
-        .catch(error => console.log(error))
-}
+    if (namee.indexOf(' ' === -1)) {
+      alert("Preencha o nome completo!")
+    }
 
-function postProducts(namee, email, tellphone, cpf, password) {
-    axios.post(url, {
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
         Nome_completo: namee,
-        CPF: cpf,
         Email: email,
         Telefone: tellphone,
-        Senha: password
+        CPF: cpf,
+        Senha: hashedPassword 
+      })
     })
-        .then(function (response) {
-            alert("Usuário cadastrado com sucesso!")
-        })
-        .catch(function (error) {
-            alert("Houve um erro ao cadastrar.   " + error)
-        })
+    .then(response => {
+      if (response.ok) {
+        Swal.fire({
+            title: "Sucesso!",
+            text: "Cadastro realizado com sucesso!",
+            icon: "success"
+          });
+    } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: '<a href="#">Why do I have this issue?</a>'
+        });
+      }
+    })
+    .catch(error => console.error("Erro:", error));
+  });
 }
+
+var menuIcon = document.getElementById("menu-icon").addEventListener('click', () => {
+  var submenu = document.getElementById("submenu")
+    
+  if(submenu.style.display === 'flex') {
+    submenu.style.display = 'none'
+  }else {
+    submenu.style.display = 'flex';
+  }
+})
+
