@@ -35,6 +35,11 @@ header img {
     gap: 40px;
 } 
 
+.produtos:hover {
+    font-size: large;
+    transition: 0.9s;
+}
+
 .menu-icon {
     font-size: 40px;
     cursor: pointer;
@@ -48,8 +53,6 @@ body {
     box-sizing: border-box;
     height: 100vh;
     width: 100vw;
-    margin: 0;
-    padding: 0;
 }
 
 .first-content {
@@ -69,15 +72,13 @@ body {
 
 /* SLIDER  */
 .content {
+    margin-left: 17%;
+    margin-top: 40px;
     height: 520px;
-    width: 935px;
+    width: 1235px;
     border-radius: 20px;
     overflow: hidden;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
 .content .slide img {
@@ -86,10 +87,9 @@ body {
 }
 
 .navigation {
-    position: absolute;
-    bottom: 160px;
-    left: 850px;
     display: flex;
+    justify-content: center;
+    margin-top: 1%;
 }
 
 .bar {
@@ -143,21 +143,31 @@ input {
 /* END SLIDER */
 
 .content-choose {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    top: 120%;
+    margin-top: 150px;
     display: block;
     align-items: center;
-    align-content: center;
     justify-content: center;
 }
 
-.choose-section {
+.choose-section-text {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.choose-section-one {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 10%;
+}
+
+.choose-section-two {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
 }
 
 .sweets {
@@ -175,19 +185,43 @@ input {
     height: 100%;
 }
 
+.sweets img:hover {
+    width: 115%;
+    height: 110%;
+    transition: 0.9s;
+    border: none;
+}
+
+.choose-section-roulade:hover {
+    width: 110%;
+}
+
 /* FOOTER */
 footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
-    display: none;
+    display: block;
     align-items: center;
-    justify-content: center;
-    height: 10%;
+    text-align: center ;
+    height: 18%;
     background-color: #fff;
     margin: 3px solid black;
     color: black;
+    margin-top: 10%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 180px;
+}
+
+.footer-content * {
+    margin: 3px;
+}
+
+.copyright {
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 footer p {

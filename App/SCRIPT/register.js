@@ -18,12 +18,20 @@ if (password === confirmPassword) {
     const hashedPassword = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(password));
 
     if (namee === '' || email === '' || tellphone === '' || cpf === '' || password === '') {
-      alert("Preencha todos os campos corretamente!");
+      Swal.fire({
+        icon: "error",
+        title: "Erro",
+        text: "Preencha todos os campos corretamente!",
+      });
       return;
     }
 
     if (namee.indexOf(' ' === -1)) {
-      alert("Preencha o nome completo!")
+      Swal.fire({
+        icon: "error",
+        title: "Erro",
+        text: "Preencha o nome completo!",
+      });
     }
 
     fetch(url, {
@@ -47,9 +55,8 @@ if (password === confirmPassword) {
     } else {
         Swal.fire({
           icon: "error",
-          title: "Oops...",
-          text: "Something went wrong!",
-          footer: '<a href="#">Why do I have this issue?</a>'
+          title: "Erro",
+          text: "informações preenchidas de forma incorretas",
         });
       }
     })
