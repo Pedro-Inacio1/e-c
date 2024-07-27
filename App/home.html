@@ -30,148 +30,106 @@
 
 <body>
     <header>
-        <img src="./ASSETS/logo.png" alt="logo">
+        <img src="./ASSETS/logo.png" class="logo" alt="logo">
         <div class="menu-bar">
             <ul>
                 <li>
                     <a href="#">Produtos</a>
                 </li>
-                <li>
-                    <a href="#">Pedidos</a>
-                </li>
-                <li>
+                <li id="cart">
                     <a href="#">Carrinho</a>
-                </li>
-                <li>
-                    <a href="#">Sobre nós</a>
                 </li>
                 <li>
                     <a href="#">Cadastre-se</a>
                 </li>
                 <li>
+                    <a href="#">Logar</a>
+                </li>
+                <li id="contact">
                     <a href="#">Contato</a>
                 </li>
                 <li>
-                    <a href="#">FAQ</a>
+                    <i class="fa-solid fa-bars" id="teste"></i>
                 </li>
             </ul>
         </div>
-        <div class="menu-icon" id="menu-icon">
-            <i class="fa-solid fa-bars"></i>
-        </div>
     </header>
 
-    <div class="first-content">
-
-        <div class="warning">
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-                Commodi odit, facilis accusantium magni velit accusamus ipsam <br>
-                in quam, animi maiores eligendi.</p>
-        </div>
-
-        <div class="submenu">
-
-        </div>
+    <div class="warning">
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+            Commodi odit, facilis accusantium magni velit accusamus ipsam <br>
+            in quam, animi maiores eligendi.</p>
     </div>
+
     <div class="content">
 
-        <div class="slides">
-
-            <input class="input" type="radio" name="slide" id="slide1" checked>
-            <input class="input" type="radio" name="slide" id="slide2">
-            <input class="input" type="radio" name="slide" id="slide3">
-            <input class="input" type="radio" name="slide" id="slide4">
-            <input class="input" type="radio" name="slide" id="slide5">
-
-
-            <div class="slide s1">
-                <img src="./ASSETS/torta.jpg">
-            </div>
-
-            <div class="slide">
-                <img src="./ASSETS/pexels-anete-lusina-15550435.jpg">
-            </div>
-
-            <div class="slide">
-                <img src="./ASSETS/pexels-kevin-b-222950695-12273929.jpg">
-            </div>
-
-            <div class="slide">
-                <img src="./ASSETS/pexels-orlovamaria-4916466.jpg">
-            </div>
-
-            <div class="slide">
-                <img src="./ASSETS/ads.jpg">
-            </div>
+        <div class="slider">
+            <img src="./ASSETS/torta.jpg" class="selected">
+            <img src="./ASSETS/boloPacoca.png">
+            <img src="./ASSETS/trufas.jpg">
+            <img src="./ASSETS/brownie-de-chocolate-g.jpg">
+            <img src="./ASSETS/Guirlanda-de-Brownie-g.jpg">
         </div>
-    </div>
-
-    <div class="navigation">
-        <label class="bar" for="slide1"></label>
-        <label class="bar" for="slide2"></label>
-        <label class="bar" for="slide3"></label>
-        <label class="bar" for="slide4"></label>
-        <label class="bar" for="slide5"></label>
     </div>
 
     <div class="content-choose">
         <div class="choose-section-text">
-            <p>Escolha a seção pertencente ao que está procurando:</p>
+            <h1>O que está procurando? </h1>
         </div>
 
-        <div class="choose-section-one">
-            <a href="./HtmlPages/Coffee.html">
-                <div class="choose-section-coffee">
-                    <p>Café</p>
-                    <div class="sweets">
+        <div class="content">
+            <div class="choose-section">
+                <div class="section-one">
+                    <div class="coffee-card" id="card">
                         <img src="./ASSETS/coffeee.jpg">
+                        <div class="coffee">
+                            <p>Café</p>
+                            <button> Abrir catálogo</button>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="../App/HtmlPages/Sweets.html">
-                <div class="choose-section-sweet">
-                    <p>Docinhos</p>
-                    <div class="sweets">
+                    <div class="sweets-card" id="card">
                         <img src="./ASSETS/brigadeiro.jpg">
+                        <div class="sweets">
+                            <p>Docinhos</p>
+                            <button>Abrir catálogo</button>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="../App/HtmlPages/Pies.html">
-                <div class="choose-section-pies">
-                    <p>Tortas</p>
-                    <div class="sweets">
+
+                    <div class="pies-card" id="card">
                         <img src="./ASSETS/pie.jpg">
+                        <div class="pies">
+                            <p>Tortas</p>
+                            <button>Abrir catálogo</button>
+                        </div>
                     </div>
                 </div>
-            </a>
+                <div class="section-two" id="card">
+                    <div class="cake-card">
+                        <img src="./ASSETS/CAKEE.jpeg">
+                        <div class="cake">
+                            <p>Bolos</p>
+                            <button>Abrir catálogo</button>
+                        </div>
+                    </div>
+
+                    <div class="roulade-card" id="card">
+                        <img src="./ASSETS/rouladee.jpg">
+                        <div class="roulade">
+                            <p>Rocamboles</p>
+                            <button>Abrir catálogo</button>
+                        </div>
+                    </div>
+
+                    <div class="gatteau-card" id="card">
+                        <img src="./ASSETS/petit.jpeg">
+                        <div class="gatteau">
+                            <p>Gatteau</p>
+                            <button>Abrir catálogo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="choose-section-two">
-            <a href="../App/HtmlPages/Cakes.html">
-                <div class="choose-section-cakes">
-                    <p>Bolos</p>
-                    <div class="sweets">
-                        <img src="./ASSETS/brigadeiro.jpg">
-                    </div>
-                </div>
-            </a>
-            <a href="../App/HtmlPages/Roulade.html">
-                <div class="choose-section-roulade">
-                    <p>Rocamboles</p>
-                    <div class="sweets">
-                        <img src="./ASSETS/brigadeiro.jpg">
-                    </div>
-                </div>
-            </a>
-            <a href="../App/HtmlPages/Gatteau.html">
-                <div class="choose-section-gatteau">
-                    <p>Gatteau</p>
-                    <div class="sweets">
-                        <img src="./ASSETS/brigadeiro.jpg">
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
     </div>
 
     <footer>

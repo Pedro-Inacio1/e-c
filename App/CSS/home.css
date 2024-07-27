@@ -1,199 +1,113 @@
 * {
-    padding: 0;
-    margin: 0;
     list-style-type: none;
     text-decoration: none;
     color: #fff;
-} 
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-shadow: 7px 1px black;
-    width: 98,5%;
-}
-    
-.header ul {
-    display: flex;
-}
-
-ul li a {
-    color: #fff;
-    padding: 20px;
-}
-
-header img {
-    width: 80px;
-    height: 80px;
-}
-
-.menu-bar ul {
-    display: flex;
-    gap: 40px;
-} 
-
-.produtos:hover {
-    font-size: large;
-    transition: 0.9s;
-}
-
-.menu-icon {
-    font-size: 40px;
-    cursor: pointer;
-    margin-right: 110px;
 }
 
 body {
     background: #513219;
     font-family: Roboto, sans-serif;
-    height: 100%;
-    box-sizing: border-box;
-    height: 100vh;
-    width: 100vw;
+}
+
+header {
+    display: flex;
+    align-items: center;    
+}
+
+header a {
+    color: #fff;
+}
+
+header a:hover {
+    color: rgba(255, 208, 0, 0.932);
+    cursor: pointer;
+    transition: ease-out 0.3s;
+}
+
+.logo {
+    width: 80px;
+    height: 80px; 
+}
+
+.menu-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.menu-bar ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu-bar ul i {
+    font-size: 40px;
+    cursor: pointer;
 }
 
 .first-content {
     display: flex;
     gap: 30%;
-    margin-left: 38%;
 }
 
 .warning {
     display: flex;
-    justify-content: center;
-    margin-top: 2%;
-    text-align: center;
-    margin-right: 14%;
+    justify-content: center;    
 }
-
 
 /* SLIDER  */
-.content {
-    margin-left: 17%;
-    margin-top: 40px;
-    height: 520px;
-    width: 1235px;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+
+.slider {
+    width: 100%;
+    height: 599px;
+    position: relative;
 }
 
-.content .slide img {
+.slider img {
+    opacity: 0;
+    position: absolute;
     width: 100%;
     height: 100%;
+    transition: ease-in-out 0.7s;
 }
 
-.navigation {
-    display: flex;
-    justify-content: center;
-    margin-top: 1%;
+.slider img.selected {
+    opacity: 1;
 }
 
-.bar {
-    width: 15px;
-    height: 15px;
-    border: 2px solid #fff;
-    margin: 6px;
-    cursor: pointer;
-    transform: .5s ease;
-}
-
-.bar:hover {
-    background-color: #fff;
-    transition: 0.7s;
-}
-
-input {
-    display: none;
-}
-
-.slides {
-    display: flex;
-    width: 500%;
-    height: 100%;
-}
-
-.slide {
-    width: 20%;
-    transition: .8s;
-}
-
-#slide1:checked ~ .s1 {
-    margin-left: 0;
-}
-
-#slide2:checked ~ .s1 {
-    margin-left: -20%;
-}
-
-#slide3:checked ~ .s1 {
-    margin-left: -40%;
-}
-
-#slide4:checked ~ .s1 {
-    margin-left: -60%;
-}
-
-#slide5:checked ~ .s1 {
-    margin-left: -80%;
-}
 /* END SLIDER */
 
-.content-choose {
-    margin-top: 150px;
-    display: block;
+.content {
+    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+.content-choose img {
+    border: 3px solid white;
+    width: 260px;
+    height: 170px;
 }
 
 .choose-section-text {
     display: flex;
     justify-content: center;
-    margin-bottom: 80px;
+    font-size: x-large;
 }
 
-.choose-section-one {
+.section-one {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
 }
 
-.choose-section-two {
-    margin-top: 5%;
+.section-two {
+    margin-top: 60px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10%;
 }
 
-.sweets {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
-    border: 3px solid white;
-    width: 200px;
-    height: 150px;
-}
-
-.sweets img {
-    width: 100%;
-    height: 100%;
-}
-
-.sweets img:hover {
-    width: 115%;
-    height: 110%;
-    transition: 0.9s;
-    border: none;
-}
-
-.choose-section-roulade:hover {
-    width: 110%;
+#card {
+    border: 5px solid #fff;
 }
 
 /* FOOTER */
@@ -201,7 +115,7 @@ footer {
     width: 100%;
     display: block;
     align-items: center;
-    text-align: center ;
+    text-align: center;
     height: 18%;
     background-color: #fff;
     margin: 3px solid black;
@@ -230,4 +144,64 @@ footer p {
 
 a {
     color: black;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width : 1050px) {
+    .sweets img {
+        width: 70%;
+        height: 90%;
+    }
+
+    .choose-section-text {
+        font-size: 10px;
+    }
+
+    header {
+        font-size: 15px;
+    }
+
+    .slider {
+        height: 400px;
+    }
+}
+
+@media (max-width : 750px) {
+    header li {
+        font-size: 12px;
+    }
+
+    .warning {
+        font-size: 12px;
+    }
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .teste {
+        font-size: 1px;
+    }
+}
+
+@media (max-width : 565px) {
+    header {
+        font-size: 2px;
+        width: 100%;
+    }
+
+    header img {
+        width: 40px;
+        height: 40px;
+    }
+
+    #contact {
+        display: none;
+    }
+
+    #cart {
+        display: none;
+    } 
 }

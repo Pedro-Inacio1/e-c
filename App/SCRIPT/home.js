@@ -1,30 +1,26 @@
+let time = 3000;
 let slideIndex = 0;
-const slides = document.querySelectorAll(".input");
+let images = document.querySelectorAll(".slider img");
+let max = images.length;
 
-function showSlide(n) {
-    slides.forEach((slide, index) => {
-        slide.checked = (index === n);
-    });
-}
+function nextImage () {
+    
+    images[slideIndex].classList.remove("selected")
+    
+    slideIndex++
 
-function nextSlide() {
-    slideIndex++;
-    if (slideIndex >= slides.length) slideIndex = 0;
-    showSlide(slideIndex);
-}
-
-function previousSlide() {
-    slideIndex--;
-    if (slideIndex < 0) slideIndex = slides.length - 1;
-    showSlide(slideIndex);
-}
-
-document.querySelector(".navigation").addEventListener("click", function(event) {
-    if (event.target.classList.contains("bar")) {
-        let index = Array.from(event.target.parentNode.children).indexOf(event.target);
-        slideIndex = index;
-        showSlide(slideIndex);
+    if(slideIndex >= max) {
+        slideIndex = 0
     }
-});
 
-setInterval(nextSlide, 6000);
+    images[slideIndex].classList.add("selected")
+}
+
+function start() {
+    setInterval(() => {
+
+        nextImage()
+    } , time)
+}
+
+window.addEventListener('load', start)
