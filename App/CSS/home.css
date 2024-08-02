@@ -182,7 +182,6 @@ button {
     opacity: 1;
 }
 
-
 footer {
     background-color: #fff;
     position: absolute;
@@ -263,6 +262,26 @@ footer p {
     }
 }
 
+
+@media(max-width: 950px) {
+    header li {
+        font-size: 0px;
+    }
+
+    #home::after {
+        font-size: medium !important;
+        content: 'Confeitaria';
+    }
+
+    #home {
+        margin-left: 30%;
+    }
+
+    header ul li {
+        min-width: 30px;
+    }
+}
+
 @media (max-width: 915px) {
     
     .submenu {
@@ -317,11 +336,6 @@ footer p {
 }
 
 @media (max-width : 525px) {
-    header ul li {
-        min-width: 90px;
-    }
-    
-
     .choose-content {
         display: block;
         margin-left: 30%;

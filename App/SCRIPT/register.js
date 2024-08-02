@@ -64,12 +64,16 @@ if (password === confirmPassword) {
   });
 }
 
-var menuIcon = document.getElementById("menu-icon").addEventListener('click', () => {
+var menuIcon = document.getElementById("menu-icon")
+
+menuIcon.addEventListener('click', () => {
+
   var submenu = document.getElementById("submenu")
     
   if(submenu.style.display === 'flex') {
     submenu.style.display = 'none'
-  }else {
+  }
+  else {
     submenu.style.display = 'flex';
   }
 })

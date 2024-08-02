@@ -7,38 +7,33 @@
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    box-shadow: 7px 1px black;
-    width: 98,5%;
-}
-    
-.header ul {
-    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1%;
+    font-size: 20px;
 }
 
-.menu-icon {
+header ul {
+    display: flex;
+    gap: 10%;
+}
+
+header ul li {
+    min-width: 120px;
+}
+
+header a {
+    color: #Fff;
+}
+
+header a:hover {
+    color: rgb(241, 241, 155);
+}
+
+header i {
     font-size: 40px;
     cursor: pointer;
-    margin-right: 110px;
 }
-
-ul li a {
-    color: #fff;
-    padding: 20px;
-}
-
-header img {
-    width: 80px;
-    height: 80px;
-}
-
-.menu-bar ul {
-    display: flex;
-    gap: 40px;
-} 
 
 body {
     background: #513219;
@@ -46,21 +41,104 @@ body {
     color: #fff;
 }
 
-.myform {
-    width: 500px;
+.submenu {
+    width: 150px;
+    display: none;
+    justify-content: end;
+    flex-direction: column;
+    box-shadow: 1px 1px 5px 5px white;
+    gap: 5px;
+}
+
+.menu {
+    height: 100px;
+    display: flex;
+    justify-content: end;
+    margin-right: 10%;
+}
+
+.menu p {
     display: flex;
     justify-content: center;
-    text-align: center;
-    align-items: end;
+}
+
+.myform {
+    display: flex;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
     flex-direction: column;
-    gap: 40px;
-    margin: auto;
+    align-items: center;
+    width: 80%;
+}
+
+.content input {
+    width: 500px;
+    height: 35px;
+    color: black;
+    border: 1px solid rgb(82, 253, 82);
+    border-radius: 5px;
+}
+
+.content label {
+    font-size: x-large;
+}
+
+.send {
+    display: flex;
+    justify-content: center;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.teste {
+    margin-left: 20%;
+}
+
+.label {
+    width: 370px;
+}
+
+.email {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tellphone {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cpf {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.password {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.password2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .submit-form {
-    width: 100px;
-    height: 40px;
-    margin-right: 25%;
+    margin-top: 20%;
+    width: 300px;
+    height: 60px;
     border-radius: 10px;
 }
 
@@ -71,25 +149,102 @@ body {
     cursor: pointer;
 }
 
-input {
-    width: 340px;
-    height: 30px;
-    border-radius: 20px;
-    color: black;
-}
-
-.submenu {
-    margin-top: 10px;
-    width: 150px;
-    margin-left: 90%;
-    display: flex;
-    justify-content: end;
-    flex-direction: column;
-    box-shadow: 1px 1px 5px 5px white;
-    gap: 5px;
-}
-
 .submenu a {
     color: #fff;
     border-bottom: 1px solid white;
+}
+
+
+footer {
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 7%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    color: black;
+}
+
+footer a {
+    color: black;
+}
+
+footer p {
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1000px) {
+    header {
+        font-size: medium;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .content input {
+        width: 300px;
+    }
+
+    .content label {
+        font-size: medium;
+    }
+
+    .label {
+        width: 250px;
+    }
+    
+    .teste {
+        margin-left: 0;
+    }
+}
+
+@media(max-width: 950px) {
+    header li {
+        font-size: 0px;
+    }
+
+    #home::after {
+        font-size: medium !important;
+        content: 'Confeitaria';
+    }
+
+    #home {
+        margin-left: 30%;
+    }
+
+    header ul li {
+        min-width: 60px;
+    }
+}
+
+@media (max-width: 750px) {
+    /* header {
+        font-size: small;
+    } */
+
+    #menu-icon {
+        font-size: 25px;
+    }
+
+    header img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .label {
+        width: 160px;
+    }
+
+    .content input {
+        width: 170px;
+        height: 25px;
+        font-size: small;
+    }
 }
